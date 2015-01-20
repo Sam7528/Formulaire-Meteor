@@ -1,0 +1,57 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Formulaire</title>
+</head>
+<body>
+	<header>
+			<h2 id="center">Formulaire</h2>
+			<form class="nouveau" id="center">
+				<li id="center">
+					<input type="text" placeholder="Nom" name="nom"/>
+				</li>
+
+				<li id="center">
+					<input type="text" placeholder="Prénom" name="prenom"/>
+				</li>
+
+				<li id="center">
+					<input type="text" placeholder="Adresse" name="adresse"/>
+				</li>
+
+				<li id="center">
+					<input type="text" placeholder="Ville" name="ville"/>
+				</li>
+
+				<li id="center">
+					<input type="text" placeholder="Prénom de l'enfant" name="enfant"/>
+				</li>
+
+				<li id="center">
+					<input type="checkbox" id="garcon" name="garcon"  checked="{{checked}}" value="true"/>
+						<label for="garcon">Garçon</label>
+					<input type="checkbox" id="fille" name="fille"/>
+						<label for="fille" >Fille</label>
+				</li>
+
+				<div class="button" id="center">
+        			<button type="submit">Envoyer votre log</button>
+        		</div>		
+			</form>
+
+			{{> loginButtons}}
+
+	</header>
+
+	<ul>
+		{{#each entree}}
+        	{{> test}}
+      	{{/each}}
+	</ul>
+
+</body>
+
+<template name="test">
+	<li id="center">Nom:	{{nom}} / Prénom:	{{prenom}} / Adresse:	{{adresse}}, {{ville}} / Enfant: {{enfant}}
+		<button class="delete">&times;</button>
+	</li>
+</template>
